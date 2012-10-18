@@ -1,7 +1,10 @@
-title: Open Source for Government
-description: A collaborative resource for government employees looking to participate in the open source community
-url: http://ben.balter.com/open-source-for-government
+#document settings
+title: Document Title Here
+description: Document Description
+url: http://path-to-the-github-pages-version
+repo_url: http://github.com/path-to-the-github-repo
 
+# default build settings for running locally, no need to edit
 server: auto
 safe: true
 pymgemnts: true

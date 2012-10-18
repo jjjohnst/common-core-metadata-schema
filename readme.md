@@ -1,17 +1,15 @@
-Open Source for Government
+Jekyll Template
 ==========================
 
-A collaborative resource for government employees looking to participate in the open source community
+A collaborative template for publishing resources on GitHub
 
-Contributing
-------------
+How to Use
+----------
 
-Please see [how to contribute](http://ben.balter.com/open-source-for-government/how-to-contribute/)
-
-Source Structure
-----------------
-
-All content, except break-out pages in [index.md](https://github.com/benbalter/open-source-for-government/blob/gh-pages/index.md) as standard (note, non-GitHub flavored) markdown as parsed by Jekyll.
+1. Fork or clone
+2. Update site name and URL in `_config.yml`
+3. Place content in `index.md` as markdown
+4. (optionally) create additional pages following the format of `index.md` 
 
 Dependencies
 ------------
@@ -21,8 +19,4 @@ Jekyll or GitHub Pages
 License
 -------
 
-(C) 2012 [Benjamin J. Balter](http://ben.balter.com)
-
-Code: MIT
-
-Text: CC BY-SA
+MIT
