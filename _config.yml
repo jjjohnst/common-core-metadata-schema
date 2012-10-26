@@ -1,0 +1,11 @@
+#document settings
+title: Data Catalog Schema
+description: Schema used to list agency datasets and APIs as hosted at agency.gov/catalog
+url: http://project-open-data.github.com/data-catalog
+repo_url: https://github.com/project-open-data/data-catalog
+
+# default build settings for running locally, no need to edit
+server: auto
+safe: true
+pymgemnts: true
+auto: true
