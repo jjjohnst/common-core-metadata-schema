@@ -1,0 +1,14 @@
+<rdf:RDF xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dcat="http://www.w3.org/ns/dcat#"
+  xmlns:dct="http://purl.org/dc/terms/">
+<dcat:Dataset>
+    <dct:title>An example dataset</dct:title>
+    <dct:description>This is an example of how to document a dataset in XML</dct:description>
+    <dcat:dataDictionary>http://developer.agency.gov/foo/</dcat:dataDictionary>
+    <dcat:accessURL>http://api.agency.gov/foo/bar.json</dcat:accessURL>
+    <dcat:keyword>Foo</dcat:keyword>
+    <dcat:keyword>Bar</dcat:keyword>
+</dcat:Dataset>
+</rdf:RDF>
