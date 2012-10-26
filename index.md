@@ -1,7 +1,7 @@
 ---
 layout: home
 permalink: /index.html
-----
+---
 
 This repository serves as the canonical description of the schema used to list agency datasets and APIs as hosted at agency.gov/catalog.
 
