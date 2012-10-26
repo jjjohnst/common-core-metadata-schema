@@ -35,7 +35,7 @@ Basic Fields
 
 The following basic fields should be used to describe each dataset:
 
-{.table striped}
+{.table table-striped}
 Field               | Definition                                    | JSON            | RDFa Lite
 -------             | ---------------                               | --------------  | ------- 
 Title               | Human-readable name                           | title           | [dct:title](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#terms-title)
@@ -51,7 +51,7 @@ Expanded Fields
 
 Agencies our encourage to use the following expanded fields when appropriate. Agencies may freely augment these fields with their own.
 
-{.table striped}
+{.table table-striped}
 Field               | Definition                                | JSON                  | RDFa Lite
 ------              | ------                                    | ----                  | --------
 Last Modified       | Date of last update                       | modified              | [dct:modified](http://www.w3.org/TR/vocab-dcat/#property--update-modification-date-1)
