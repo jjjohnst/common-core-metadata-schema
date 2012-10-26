@@ -36,29 +36,48 @@ Basic Fields
 
 The following basic fields should be used to describe each dataset:
 
-Field           | Definition                                    | JSON Field Key  | XML Tag  
--------         | ---------------                               | --------------  | ------- 
-Name            | Human-readable name                           | name            | [dct:title](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#terms-title)
-Description     | Human-readable description                    | description     | [dct:description](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#terms-description)
-Documentation   | URL to documentation                          | documentation   | [dcat:dataDictionary](http://www.w3.org/TR/vocab-dcat/#property--data-dictionary)
-URL             | URL to dataset or API                         | url             | [dcat:accessURL](http://www.w3.org/TR/vocab-dcat/#property--access-download)
-Tags            | Keywords describing data                      | tags            | [dcat:keyword](http://www.w3.org/TR/vocab-dcat/#property--keyword-tag)
-Public          | Whether the dataset is public (true/false)    | public          | TBD 
-Queryable       | Whether dynamically queryable (true/false)    | queryable       | TBD
+Field               | Definition                                    | JSON            | RDFa Lite
+-------             | ---------------                               | --------------  | ------- 
+Title               | Human-readable name                           | title           | [dct:title](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#terms-title)
+Description         | Human-readable description                    | description     | [dct:description](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#terms-description)
+Documentation URL   | URL to documentation                          | dataDictionary  | [dcat:dataDictionary](http://www.w3.org/TR/vocab-dcat/#property--data-dictionary)
+URL                 | URL to dataset or API                         | accessURL       | [dcat:accessURL](http://www.w3.org/TR/vocab-dcat/#property--access-download)
+Tags                | Keywords describing data                      | keywords        | [dcat:keyword](http://www.w3.org/TR/vocab-dcat/#property--keyword-tag)
+Public              | Whether the dataset is public (true/false)    | public          | TBD 
+Queryable           | Whether dynamically queryable (true/false)    | queryable       | TBD
 
 Expanded Fields
 ---------------
 
 Agencies our encourage to use the following expanded fields when appropriate. Agencies may freely augment these fields with their own.
 
-Field           | Definition                                | JSON Field Key  | XML Tag  
-------          | ------                                    | --------------  | --------
-Last Modified   | Date of last update                       | last_modified   | [dcterms:modified](http://www.w3.org/TR/vocab-dcat/#property--update-modification-date-1)
-Format          | The format(s) the dataset is available in | format          | [dcterms:format](http://www.w3.org/TR/vocab-dcat/#property--format)
+Field               | Definition                                | JSON                  | RDFa Lite
+------              | ------                                    | ----                  | --------
+Last Modified       | Date of last update                       | modified              | [dct:modified](http://www.w3.org/TR/vocab-dcat/#property--update-modification-date-1)
+Format              | The format(s) the dataset is available in | format                | [dct:format](http://www.w3.org/TR/vocab-dcat/#property--format)
+Publisher           | Publishing entity                         | publisher             | [dct:publisher](http://www.w3.org/TR/vocab-dcat/#property--publisher-1)
+Release Date        | date of formal issuance                   | issued                | [dct:issued](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#issued)
+Frequency           | frequency with which dataset is published | accrualPeriodicuity   | [dct:accrualPeriodicity](http://purl.org/dc/terms/accrualPeriodicity)
+Unique Identifier   | A unique identifier for the dataset       | identifier            | [dct:identifier](http://purl.org/dc/terms/identifier)
+Geographic Coverage | Spacial coverage of the dataset           | spacial               | [dct:spacial](http://purl.org/dc/terms/spatial)
+Temporal Coverage   | Temporal period the dataset covers        | temporal              | [dct:temporal](http://purl.org/dc/terms/temporal)
+Language            | The language of the dataset               | language              | [dct:language](http://purl.org/dc/terms/language)
+License             | The license dataset is published with     | license               | [dct:license](http://purl.org/dc/terms/license)
+Granularity         | Level of granularity                      | granularity           | [dcat:granularity](http://www.w3.org/ns/dcat#)
+Data Quality        | Describe the quality of the data          | dataQuality           | [dcat:dataQuality](http://www.w3.org/ns/dcat#dataQuality)
+Category            | Main category of the dataset              | theme                 | [dcat:theme](http://www.w3.org/ns/dcat#theme)
+Related Documents   | Related documents such as developer docs  | references            | [dcterms:references](http://purl.org/dc/terms/references)
+Distribution        | Connects a dataset to available distributions | distribution     | [dcat:distribution](http://www.w3.org/ns/dcat#distribution)
+Size                | The size of the distribution              | size                  | [dcat:size](http://www.w3.org/ns/dcat#size)
+Format              | The format of the distribution            | format                | [dcterms:format](http://purl.org/dc/terms/format)
+Download URL        | Downloadable distribution of a dataset    | download              | [dcat:download](http://www.w3.org/ns/dcat#Download)
+Endpoint            | Endpoint of web service to access dataset  | WebService            | [dcat:WebService](http://www.w3.org/ns/dcat#WebService)
+RSS Feed            | Availability of dataset as a feed         | Feed                  | [dcat:feed](http://www.w3.org/ns/dcat#Feed)
+Agency              | The publishing agency                     | Organization          | [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
 
-...
+(need to add vocab.data.gov terms)
 
-[Additional fields](http://www.w3.org/TR/vocab-dcat/)
+[Full documentation](http://www.w3.org/TR/vocab-dcat/)
 
 Examples
 --------
