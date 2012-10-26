@@ -63,5 +63,5 @@ Format          | The format(s) the dataset is available in | format          | 
 Examples
 --------
 
-* [JSON](examples/json/)
+* [JSON](examples/catalog.json)
 * [XML](examples/xml/)

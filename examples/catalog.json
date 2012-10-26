@@ -1,0 +1,11 @@
+[
+    {
+        "name":             "An example dataset",
+        "description":      "This is an example of how to document a dataset in JSON",
+        "documentation":    "http://developer.agency.gov/foo/",
+        "url":              "http://api.agency.gov/foo/bar.json",
+        "tags":             [ "foo", "bar" ],
+        "public":           true,
+        "queryable":        true      
+    }
+]
