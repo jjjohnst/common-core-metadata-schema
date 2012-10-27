@@ -43,8 +43,11 @@ Description         | Human-readable description                    | descriptio
 Documentation URL   | URL to documentation                          | dataDictionary  | [dcat:dataDictionary](http://www.w3.org/TR/vocab-dcat/#property--data-dictionary)
 URL                 | URL to dataset or API                         | accessURL       | [dcat:accessURL](http://www.w3.org/TR/vocab-dcat/#property--access-download)
 Tags                | Keywords describing data                      | keywords        | [dcat:keyword](http://www.w3.org/TR/vocab-dcat/#property--keyword-tag)
-Public              | Whether the dataset is public (true/false)    | public          | TBD 
-Queryable           | Whether dynamically queryable (true/false)    | queryable       | TBD
+
+License             | The license dataset is published with     | license               | [dct:license](http://purl.org/dc/terms/license)
+Public              | Whether the dataset is public (true/false)    | public          | [xsd:boolean](http://www.w3.org/TR/xmlschema-2/#boolean)
+Agency              | The publishing agency                     | Organization          | [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
+
 
 Expanded Fields
 ---------------
@@ -58,12 +61,11 @@ Last Modified       | Date of last update                       | modified      
 Format              | The format(s) the dataset is available in | format                | [dct:format](http://www.w3.org/TR/vocab-dcat/#property--format)
 Publisher           | Publishing entity                         | publisher             | [dct:publisher](http://www.w3.org/TR/vocab-dcat/#property--publisher-1)
 Release Date        | date of formal issuance                   | issued                | [dct:issued](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#issued)
-Frequency           | frequency with which dataset is published | accrualPeriodicuity   | [dct:accrualPeriodicity](http://purl.org/dc/terms/accrualPeriodicity)
+Frequency           | frequency with which dataset is published | accrualPeriodicity   | [dct:accrualPeriodicity](http://purl.org/dc/terms/accrualPeriodicity)
 Unique Identifier   | A unique identifier for the dataset       | identifier            | [dct:identifier](http://purl.org/dc/terms/identifier)
-Geographic Coverage | Spacial coverage of the dataset           | spacial               | [dct:spacial](http://purl.org/dc/terms/spatial)
+Geographic Coverage | Spatial coverage of the dataset           | spatial               | [dct:spatial](http://purl.org/dc/terms/spatial)
 Temporal Coverage   | Temporal period the dataset covers        | temporal              | [dct:temporal](http://purl.org/dc/terms/temporal)
 Language            | The language of the dataset               | language              | [dct:language](http://purl.org/dc/terms/language)
-License             | The license dataset is published with     | license               | [dct:license](http://purl.org/dc/terms/license)
 Granularity         | Level of granularity                      | granularity           | [dcat:granularity](http://www.w3.org/ns/dcat#)
 Data Quality        | Describe the quality of the data          | dataQuality           | [dcat:dataQuality](http://www.w3.org/ns/dcat#dataQuality)
 Category            | Main category of the dataset              | theme                 | [dcat:theme](http://www.w3.org/ns/dcat#theme)
@@ -74,7 +76,6 @@ Format              | The format of the distribution            | format        
 Download URL        | Downloadable distribution of a dataset    | download              | [dcat:download](http://www.w3.org/ns/dcat#Download)
 Endpoint            | Endpoint of web service to access dataset  | WebService            | [dcat:WebService](http://www.w3.org/ns/dcat#WebService)
 RSS Feed            | Availability of dataset as a feed         | Feed                  | [dcat:feed](http://www.w3.org/ns/dcat#Feed)
-Agency              | The publishing agency                     | Organization          | [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
 
 (need to add vocab.data.gov terms)
 
