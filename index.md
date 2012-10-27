@@ -43,7 +43,6 @@ Description         | Human-readable description                    | descriptio
 Documentation URL   | URL to documentation                          | dataDictionary  | [dcat:dataDictionary](http://www.w3.org/TR/vocab-dcat/#property--data-dictionary)
 URL                 | URL to dataset or API                         | accessURL       | [dcat:accessURL](http://www.w3.org/TR/vocab-dcat/#property--access-download)
 Tags                | Keywords describing data                      | keywords        | [dcat:keyword](http://www.w3.org/TR/vocab-dcat/#property--keyword-tag)
-
 License             | The license dataset is published with     | license               | [dct:license](http://purl.org/dc/terms/license)
 Public              | Whether the dataset is public (true/false)    | public          | [xsd:boolean](http://www.w3.org/TR/xmlschema-2/#boolean)
 Agency              | The publishing agency                     | Organization          | [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
