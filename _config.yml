@@ -1,6 +1,6 @@
 #document settings
 title: Data Catalog Schema
-description: Schema used to list agency datasets and APIs as hosted at agency.gov/catalog
+description: Schema used to list agency datasets and APIs as hosted at agency.gov/data
 url: http://project-open-data.github.com/data-catalog
 repo_url: https://github.com/project-open-data/data-catalog
 
