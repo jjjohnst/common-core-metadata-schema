@@ -3,27 +3,52 @@ layout: home
 permalink: /index.html
 ---
 
-
 This repository serves as the canonical description of the schema used to list agency datasets and APIs as hosted at agency.gov/data.  
 
+Why this effort
+---------------
 
-Common core and extensible metadata 
------------------------------------
+The data agencies collect and curate is a national treasure. Data from the national weather service and the global positioning system have each given rise to countless products and entire industries, yet much more government data exists, waiting to be tapped of its potential. 
 
-Metadata are selected fields or elements which describe data.  The challenge is to define the standard metadata fields and the names of those fields so that the consumer of the data has sufficient information to process the data. The more information that can be conveyed in a recognized standard, the more valuable data becomes. Metadata can range from basic to advanced – from allowing one to discover the mere fact that a certain data asset exists and is about a general subject all the way to providing detailed semantic information that enables a high degree of machine readability. Making the metadata machine readable greatly increases its openness and utility.
+To this end, the digital strategy [requires](http://www.whitehouse.gov/sites/default/files/omb/egov/digital-government/digital-government.html#existing-data action item 2.2) agency to catalog and tag their data to make it more easily discoverable to private-sector developers and entrepreneurs.
+
+Through this effort, agencies will begin to tag their data, using common standards, in hopes of building a comprehensive [folksononmy](http://en.wikipedia.org/wiki/Folksonomy) to make government data more easily discoverable. 
+
+Each agency will describe their existing datasets as they see fit using the below described standard, and will make such metadata available at a consistent URL across agencies. Similar to existing practices already in use on the web, such as `sitemap.xml` or `robots.txt`, this will allow developers, both within the government and the public to programmatically discover government data in a machine-readable way.
+
+Establishing a vocabulary
+-------------------------
+
+Metadata are selected fields or elements which describe data. The challenge is to define the standard metadata fields and the names of those fields so that the consumer of the data has sufficient information to process the data. The more information that can be conveyed in a recognized standard, the more valuable data becomes. Metadata can range from basic to advanced – from allowing one to discover the mere fact that a certain data asset exists and is about a general subject all the way to providing detailed semantic information that enables a high degree of machine readability. Making the metadata machine readable greatly increases its openness and utility.
 
 Establishing a common vocabulary is the key to any communication, including communication between machines.  [Schema.org](http://www.schema.org) is a vocabulary that is being developed through a collaboration of the major search engines and will be the basis for the **common core metadata** required in this memorandum. The standard consists of a number of schemas (hierarchical vocabulary terms) that represent things that are most often looked for on the web and encapsulates many of the early lessons learned from vocabulary development.  
 
-To fulfill the requirements of this memorandum, agencies should begin to [describe datasets using the schema.org vocabulary](http://blog.schema.org/). “Extensional” and/or domain specific metadata can easily be added using other vocabularies to embedded HTML markup even if it is not a term (entity/property) that will get indexed by the major search engines – it could still be indexed by other custom search engines and by Data.gov harvesting. 
+Implementing
+------------
 
-Schema.org uses [RDFa Lite](http://www.w3.org/TR/rdfa-lite/), a subset of RDFa (Resource Description Framework in Attribute) that provides a common syntax for expressing metadata on websites in a way that computers can understand and begin to formulate knowledge about those data about your organization.  The “Lite” means that it is not the full set of metadata that may be used to convey useful information about an organization, but instead provides a minimal set that will supply the most relevant information about an organization.  Using RDFa Lite, an agency may include other vocabularies (such as DCAT, FOAF, and Dublin Core) as long as they are properly assigned.  More information on adopting common core and extensible metadata can be found on [Project Open Data](http://project-open-data.github.com/).
+To fulfill the requirements of this memorandum, agencies should begin to [describe datasets using the schema.org vocabulary](http://blog.schema.org/). This catalog is to be published in two places. First, as RDFa Lite, either embedded within a human-readable HTML page (e.g., `agency.gov/data/`) or as a standalone XML file (e.g., `agency.gov/data.xml`), and second, as JSON file at `agency.gov/data.json`. 
 
+### RDFa Lite
+
+[RDFa Lite](http://www.w3.org/TR/rdfa-lite/) is a subset of RDFa (Resource Description Framework in Attribute) that provides a common syntax for expressing metadata on websites in a way that computers can understand and begin to formulate knowledge about those data about your organization. RDFa Lite embeds itself in existing, standard HTML pages. For example, if previously a dataset was described as `<h2>Name of Dataset</h2>`, RDFa would extend that markup as  `<h2 property="dct:title">Name of Dataset</h2>` (notice the additional of the property field). This additional metadata is not visible when the page is rendered, and does not affect the page layout or content. It simply provides an additional level of description for search engines, crawlers, and other programatic consumers of your site's content.
+
+### JSON
+
+JSON is a lightweight and simple way to represent machine-readable data. It is quickly becoming the *de facto* standard for shuttling data across the internet, fueled primarily by the rise of mobile and APIs. Most if not all modern programing languages can interpret and produce JSON out of the box. 
+
+The JSON representation of the catalog should track directly to the RDFa version, with the exception that JSON keys should not contain the domain prefix (e.g., `dct:title` becomes `title` and `dct:description` becomes simply `description`). Catalogs should be composed of an array of JSON objects, and all fields other than keywords should be a string (where keywords is an array of strings).
+
+Extending the Schema
+--------------------
+
+"Extensional" and/or domain specific metadata can easily be added using other vocabularies to embedded HTML markup even if it is not a term (entity/property) that will get indexed by the major search engines – it could still be indexed by other custom search engines and by Data.gov harvesting. 
+
+The “Lite” means that it is not the full set of metadata that may be used to convey useful information about an organization, but instead provides a minimal set that will supply the most relevant information about an organization.  Using RDFa Lite, an agency may include other vocabularies (such as DCAT, FOAF, and Dublin Core) as long as they are properly assigned.  More information on adopting common core and extensible metadata can be found on [Project Open Data](http://project-open-data.github.com/).
 
 Hosting
 -------
 
 Each agency should catalog their existing datasets and APIs, both public and internal, in a file compatible with the formats described herein, and should host such a file at `agency.gov/data/data.xml` *and* `agency.gov/data/data.json`.
-
 
 Datasets versus APIs
 --------------------
@@ -45,9 +70,9 @@ Description         | Human-readable description                    | descriptio
 Documentation URL   | URL to documentation                          | dataDictionary  | [dcat:dataDictionary](http://www.w3.org/TR/vocab-dcat/#property--data-dictionary)
 URL                 | URL to dataset or API                         | accessURL       | [dcat:accessURL](http://www.w3.org/TR/vocab-dcat/#property--access-download)
 Tags                | Keywords describing data                      | keywords        | [dcat:keyword](http://www.w3.org/TR/vocab-dcat/#property--keyword-tag)
-License             | The license dataset is published with     | license               | [dct:license](http://purl.org/dc/terms/license)
+License             | The license dataset is published with         | license         | [dct:license](http://purl.org/dc/terms/license)
 Public              | Whether the dataset is public (true/false)    | public          | [xsd:boolean](http://www.w3.org/TR/xmlschema-2/#boolean)
-Agency              | The publishing agency                     | Organization          | [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
+Agency              | The publishing agency                         | Organization    | [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
 
 
 Expanded Fields
@@ -62,7 +87,7 @@ Last Modified       | Date of last update                       | modified      
 Format              | The format(s) the dataset is available in | format                | [dct:format](http://www.w3.org/TR/vocab-dcat/#property--format)
 Publisher           | Publishing entity                         | publisher             | [dct:publisher](http://www.w3.org/TR/vocab-dcat/#property--publisher-1)
 Release Date        | date of formal issuance                   | issued                | [dct:issued](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#issued)
-Frequency           | frequency with which dataset is published | accrualPeriodicity   | [dct:accrualPeriodicity](http://purl.org/dc/terms/accrualPeriodicity)
+Frequency           | frequency with which dataset is published | accrualPeriodicity    | [dct:accrualPeriodicity](http://purl.org/dc/terms/accrualPeriodicity)
 Unique Identifier   | A unique identifier for the dataset       | identifier            | [dct:identifier](http://purl.org/dc/terms/identifier)
 Geographic Coverage | Spatial coverage of the dataset           | spatial               | [dct:spatial](http://purl.org/dc/terms/spatial)
 Temporal Coverage   | Temporal period the dataset covers        | temporal              | [dct:temporal](http://purl.org/dc/terms/temporal)
@@ -71,11 +96,11 @@ Granularity         | Level of granularity                      | granularity   
 Data Quality        | Describe the quality of the data          | dataQuality           | [dcat:dataQuality](http://www.w3.org/ns/dcat#dataQuality)
 Category            | Main category of the dataset              | theme                 | [dcat:theme](http://www.w3.org/ns/dcat#theme)
 Related Documents   | Related documents such as developer docs  | references            | [dcterms:references](http://purl.org/dc/terms/references)
-Distribution        | Connects a dataset to available distributions | distribution     | [dcat:distribution](http://www.w3.org/ns/dcat#distribution)
+Distribution        | Connects a dataset to available distributions | distribution      | [dcat:distribution](http://www.w3.org/ns/dcat#distribution)
 Size                | The size of the distribution              | size                  | [dcat:size](http://www.w3.org/ns/dcat#size)
 Format              | The format of the distribution            | format                | [dcterms:format](http://purl.org/dc/terms/format)
 Download URL        | Downloadable distribution of a dataset    | download              | [dcat:download](http://www.w3.org/ns/dcat#Download)
-Endpoint            | Endpoint of web service to access dataset  | WebService            | [dcat:WebService](http://www.w3.org/ns/dcat#WebService)
+Endpoint            | Endpoint of web service to access dataset | WebService            | [dcat:WebService](http://www.w3.org/ns/dcat#WebService)
 RSS Feed            | Availability of dataset as a feed         | Feed                  | [dcat:feed](http://www.w3.org/ns/dcat#Feed)
 
 (need to add vocab.data.gov terms)
