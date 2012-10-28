@@ -3,25 +3,27 @@ layout: home
 permalink: /index.html
 ---
 
-This repository serves as the canonical description of the schema used to list agency datasets and APIs as hosted at agency.gov/catalog.
 
-Rationale
----------
+This repository serves as the canonical description of the schema used to list agency datasets and APIs as hosted at agency.gov/data.  
 
-Data is a national treasure... etc.
 
-The digital strategy [requires](http://www.whitehouse.gov/sites/default/files/omb/egov/digital-government/digital-government.html#existing-data action item 2.2) agency to catalog and tag their data to make it more easily discoverable.
+Common core and extensible metadata 
+-----------------------------------
 
-Think about it this way: Let's say you're an entrepreneur that wants to build a mobile app for people who enjoy fishing. Government data about fishing is spread across many agencies, thus making it hard to unlock the resources the govenment makes available. If however, both the Department of Commerce and Department of the Interior both tag their fisheries data "salmon", to use [http://www.youtube.com/watch?v=UIYgetzo1aQ a popular example], the entrepreneur can find salmon-related data across agency lines, by forcing the government, not the citizen, to absorb the complexity.
+Metadata are selected fields or elements which describe data.  The challenge is to define the standard metadata fields and the names of those fields so that the consumer of the data has sufficient information to process the data. The more information that can be conveyed in a recognized standard, the more valuable data becomes. Metadata can range from basic to advanced – from allowing one to discover the mere fact that a certain data asset exists and is about a general subject all the way to providing detailed semantic information that enables a high degree of machine readability. Making the metadata machine readable greatly increases its openness and utility.
 
-While it would be a fool's errand to try to predict in advance every such tag, a [http://en.wikipedia.org/wiki/Folksonomy folksonomy] would allow government agencies to describe their APIs as they see fit, and disambiguation can occur on the data.gov CMS/catalog level as necessary.
+Establishing a common vocabulary is the key to any communication, including communication between machines.  [Schema.org](http://www.schema.org) is a vocabulary that is being developed through a collaboration of the major search engines and will be the basis for the **common core metadata** required in this memorandum. The standard consists of a number of schemas (hierarchical vocabulary terms) that represent things that are most often looked for on the web and encapsulates many of the early lessons learned from vocabulary development.  
 
-(talk about how outside developers can use this file, how it relates to sitemap.xml, etc.)
+To fulfill the requirements of this memorandum, agencies should begin to [describe datasets using the schema.org vocabulary](http://blog.schema.org/). “Extensional” and/or domain specific metadata can easily be added using other vocabularies to embedded HTML markup even if it is not a term (entity/property) that will get indexed by the major search engines – it could still be indexed by other custom search engines and by Data.gov harvesting. 
+
+Schema.org uses [RDFa Lite](http://www.w3.org/TR/rdfa-lite/), a subset of RDFa (Resource Description Framework in Attribute) that provides a common syntax for expressing metadata on websites in a way that computers can understand and begin to formulate knowledge about those data about your organization.  The “Lite” means that it is not the full set of metadata that may be used to convey useful information about an organization, but instead provides a minimal set that will supply the most relevant information about an organization.  Using RDFa Lite, an agency may include other vocabularies (such as DCAT, FOAF, and Dublin Core) as long as they are properly assigned.  More information on adopting common core and extensible metadata can be found on [Project Open Data](http://project-open-data.github.com/).
+
 
 Hosting
 -------
 
-Each agency should catalog their existing datasets and APIs, both public and internal, in a file compatible with the formats described herein, and should host such a file at `agency.gov/catalog.xml` *and* `agency.gov/catalog.json`.
+Each agency should catalog their existing datasets and APIs, both public and internal, in a file compatible with the formats described herein, and should host such a file at `agency.gov/data/data.xml` *and* `agency.gov/data/data.json`.
+
 
 Datasets versus APIs
 --------------------
