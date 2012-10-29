@@ -1,8 +1,8 @@
 #document settings
-title: Data Catalog Schema
+title: Common Core Metadata Schema
 description: Schema used to list agency datasets and APIs as hosted at agency.gov/data
-url: http://project-open-data.github.com/data-catalog
-repo_url: https://github.com/project-open-data/data-catalog
+url: http://project-open-data.github.com/common-core-metadata-schema
+repo_url: https://github.com/project-open-data/common-core-metadata-schema
 
 # default build settings for running locally, no need to edit
 server: auto
