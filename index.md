@@ -5,38 +5,12 @@ permalink: /index.html
 
 This repository serves as the canonical description of the schema used to list agency datasets and APIs as hosted at agency.gov/data.  
 
-Why this effort
----------------
-
-The data agencies collect and curate is a national treasure. Data from the national weather service and the global positioning system have each given rise to countless products and entire industries, yet much more government data exists, waiting to be tapped of its potential. 
-
-To this end, the digital strategy [requires](http://www.whitehouse.gov/sites/default/files/omb/egov/digital-government/digital-government.html#existing-data action item 2.2) agency to catalog and tag their data to make it more easily discoverable to private-sector developers and entrepreneurs.
-
-Through this effort, agencies will begin to tag their data, using common standards, in hopes of building a comprehensive [folksononmy](http://en.wikipedia.org/wiki/Folksonomy) to make government data more easily discoverable. 
-
-Each agency will describe their existing datasets as they see fit using the below described standard, and will make such metadata available at a consistent URL across agencies. Similar to existing practices already in use on the web, such as `sitemap.xml` or `robots.txt`, this will allow developers, both within the government and the public to programmatically discover government data in a machine-readable way.
-
 Establishing a vocabulary
 -------------------------
 
 Metadata are selected fields or elements which describe data. The challenge is to define the standard metadata fields and the names of those fields so that the consumer of the data has sufficient information to process the data. The more information that can be conveyed in a recognized standard, the more valuable data becomes. Metadata can range from basic to advanced – from allowing one to discover the mere fact that a certain data asset exists and is about a general subject all the way to providing detailed semantic information that enables a high degree of machine readability. Making the metadata machine readable greatly increases its openness and utility.
 
 Establishing a common vocabulary is the key to any communication, including communication between machines.  [Schema.org](http://www.schema.org) is a vocabulary that is being developed through a collaboration of the major search engines and will be the basis for the **common core metadata** required in this memorandum. The standard consists of a number of schemas (hierarchical vocabulary terms) that represent things that are most often looked for on the web and encapsulates many of the early lessons learned from vocabulary development.  
-
-Implementing
-------------
-
-To fulfill the requirements of this memorandum, agencies should begin to [describe datasets using the schema.org vocabulary](http://blog.schema.org/). This catalog is to be published in two places. First, as RDFa Lite, either embedded within a human-readable HTML page (e.g., `agency.gov/data/`) or as a standalone XML file (e.g., `agency.gov/data.xml`), and second, as JSON file at `agency.gov/data.json`. 
-
-### RDFa Lite
-
-[RDFa Lite](http://www.w3.org/TR/rdfa-lite/) is a subset of RDFa (Resource Description Framework in Attribute) that provides a common syntax for expressing metadata on websites in a way that computers can understand and begin to formulate knowledge about those data about your organization. RDFa Lite embeds itself in existing, standard HTML pages. For example, if previously a dataset was described as `<h2>Name of Dataset</h2>`, RDFa would extend that markup as  `<h2 property="dct:title">Name of Dataset</h2>` (notice the additional of the property field). This additional metadata is not visible when the page is rendered, and does not affect the page layout or content. It simply provides an additional level of description for search engines, crawlers, and other programatic consumers of your site's content.
-
-### JSON
-
-JSON is a lightweight and simple way to represent machine-readable data. It is quickly becoming the *de facto* standard for shuttling data across the internet, fueled primarily by the rise of mobile and APIs. Most if not all modern programing languages can interpret and produce JSON out of the box. 
-
-The JSON representation of the catalog should track directly to the RDFa version, with the exception that JSON keys should not contain the domain prefix (e.g., `dct:title` becomes `title` and `dct:description` becomes simply `description`). Catalogs should be composed of an array of JSON objects, and all fields other than keywords should be a string (where keywords is an array of strings).
 
 Extending the Schema
 --------------------
@@ -45,17 +19,12 @@ Extending the Schema
 
 The “Lite” means that it is not the full set of metadata that may be used to convey useful information about an organization, but instead provides a minimal set that will supply the most relevant information about an organization.  Using RDFa Lite, an agency may include other vocabularies (such as DCAT, FOAF, and Dublin Core) as long as they are properly assigned.  More information on adopting common core and extensible metadata can be found on [Project Open Data](http://project-open-data.github.com/).
 
-Hosting
--------
-
-Each agency should catalog their existing datasets and APIs, both public and internal, in a file compatible with the formats described herein, and should host such a file at `agency.gov/data/data.xml` *and* `agency.gov/data/data.json`.
-
 Datasets versus APIs
 --------------------
 
 APIs or Application Programming Interfaces are allow developers (both internal to the agency and the public) to dynamically query a dataset. For example, a dataset [of farmers markets](https://explore.data.gov/Agriculture/Farmers-Markets-Geographic-Data/wfna-38ey) may be made available for download as a single file (e.g., a CSV), or may be made available to developers as an API, such that a developer could provide the agency with a zipcode, and retrieve a list of farmers markets in that area.
 
-The catalog file should include *both* datasets and APIs.
+The catalog file should include *both* datasets and APIs. Agencies can use the dcat:webService, dcat:download, and dcat:distribution properties to distinguish between datasets and dynamic APIs.
 
 Basic Fields
 ------------
@@ -105,7 +74,11 @@ RSS Feed            | Availability of dataset as a feed         | Feed          
 
 (need to add vocab.data.gov terms)
 
-[Full documentation](http://www.w3.org/TR/vocab-dcat/)
+Additional Information
+----------------------
+
+* [Schema.org](http://schema.org)
+* [DCAT](http://www.w3.org/TR/vocab-dcat/)
 
 Examples
 --------
