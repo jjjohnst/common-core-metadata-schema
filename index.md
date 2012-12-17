@@ -32,17 +32,22 @@ Basic Fields
 The following basic fields should be used to describe each dataset:
 
 {.table .table-striped}
-Field               | Definition                                    | JSON            | RDFa Lite
--------             | ---------------                               | --------------  | ------- 
-Title               | Human-readable name                           | title           | [dct:title](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#terms-title)
-Description         | Human-readable description                    | description     | [dct:description](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#terms-description)
-Documentation URL   | URL to documentation                          | dataDictionary  | [dcat:dataDictionary](http://www.w3.org/TR/vocab-dcat/#property--data-dictionary)
-URL                 | URL to dataset or API                         | accessURL       | [dcat:accessURL](http://www.w3.org/TR/vocab-dcat/#property--access-download)
-Tags                | Keywords describing data                      | keywords        | [dcat:keyword](http://www.w3.org/TR/vocab-dcat/#property--keyword-tag)
-License             | The license dataset is published with         | license         | [dct:license](http://purl.org/dc/terms/license)
-Public              | Whether the dataset is public (true/false)    | public          | [xsd:boolean](http://www.w3.org/TR/xmlschema-2/#boolean)
-Agency              | The publishing agency                         | Organization    | [foaf:Organization](http://xmlns.com/foaf/0.1/Organization)
-
+Field               | Definition                                       | JSON            | RDFa Lite
+-------             | ---------------                                  | --------------  | ------- 
+Title               | Human-readable name of the asset.  Should be in plain English and include sufficient detail to facilitate search and discovery.                               | title           | [dct:title](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#terms-title)
+Description         | Human-readable description (e.g., an abstract) with sufficient detail to enable a user to quickly understand whether the asset is of interest.                      | description     | [dct:description](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#terms-description)
+Documentation URL   | URL to documentation for the dataset or API                            | dataDictionary  | [dcat:dataDictionary](http://www.w3.org/TR/vocab-dcat/#property--data-dictionary)
+URL                 | URL to dataset or API                            | accessURL       | [dcat:accessURL](http://www.w3.org/TR/vocab-dcat/#property--access-download)
+Format              | The file format or API type of the distribution                   | format          | [dcterms:format](http://purl.org/dc/terms/format)
+Tags                | Keywords describing data                         | keywords        | [dcat:keyword](http://www.w3.org/TR/vocab-dcat/#property--keyword-tag)
+Last Update      | Most recent date on which the dataset was changed, updated or modified. | modified 	| [dcterms:modified](http://www.w3.org/TR/vocab-dcat/#property--update-modification-date-1)
+License             | The license dataset or API is published with            | license         | [dct:license](http://purl.org/dc/terms/license)
+Spatial		    | The range of spatial applicability of a dataset  | spatial 	 | [dct:spatial](http://purl.org/dc/terms/spatial)
+Temporal	    | The range of temporal applicability of a dataset | temporal	 | [dct:temporal](http://purl.org/dc/terms/temporal)
+Publisher           | The publishing agency                            | organization    | [foaf:Organization](http://xmlns.com/foaf/spec/#term_Organization)
+Contact Name	    | Contact person's name (first, then last) for the asset	| person	| [foaf:Person](http://xmlns.com/foaf/spec/#term_Person)
+Contact Email	    | Contact person's email address				| mbox		| [foaf:mbox](http://xmlns.com/foaf/spec/#term_mbox)
+Public              | Whether the dataset or API is public (true/false).      | public          | [xsd:boolean](http://www.w3.org/TR/xmlschema-2/#boolean)
 
 Expanded Fields
 ---------------
@@ -52,14 +57,9 @@ Agencies our encourage to use the following expanded fields when appropriate. Ag
 {.table .table-striped}
 Field               | Definition                                | JSON                  | RDFa Lite
 ------              | ------                                    | ----                  | --------
-Last Modified       | Date of last update                       | modified              | [dct:modified](http://www.w3.org/TR/vocab-dcat/#property--update-modification-date-1)
-Format              | The format(s) the dataset is available in | format                | [dct:format](http://www.w3.org/TR/vocab-dcat/#property--format)
-Publisher           | Publishing entity                         | publisher             | [dct:publisher](http://www.w3.org/TR/vocab-dcat/#property--publisher-1)
 Release Date        | date of formal issuance                   | issued                | [dct:issued](http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=terms#issued)
 Frequency           | frequency with which dataset is published | accrualPeriodicity    | [dct:accrualPeriodicity](http://purl.org/dc/terms/accrualPeriodicity)
-Unique Identifier   | A unique identifier for the dataset       | identifier            | [dct:identifier](http://purl.org/dc/terms/identifier)
-Geographic Coverage | Spatial coverage of the dataset           | spatial               | [dct:spatial](http://purl.org/dc/terms/spatial)
-Temporal Coverage   | Temporal period the dataset covers        | temporal              | [dct:temporal](http://purl.org/dc/terms/temporal)
+Unique Identifier   | A unique identifier for the dataset or API as maintained within an Agency catalog or database       | identifier            | [dct:identifier](http://purl.org/dc/terms/identifier)
 Language            | The language of the dataset               | language              | [dct:language](http://purl.org/dc/terms/language)
 Granularity         | Level of granularity                      | granularity           | [dcat:granularity](http://www.w3.org/ns/dcat#)
 Data Quality        | Describe the quality of the data          | dataQuality           | [dcat:dataQuality](http://www.w3.org/ns/dcat#dataQuality)
@@ -67,20 +67,20 @@ Category            | Main category of the dataset              | theme         
 Related Documents   | Related documents such as developer docs  | references            | [dcterms:references](http://purl.org/dc/terms/references)
 Distribution        | Connects a dataset to available distributions | distribution      | [dcat:distribution](http://www.w3.org/ns/dcat#distribution)
 Size                | The size of the distribution              | size                  | [dcat:size](http://www.w3.org/ns/dcat#size)
-Format              | The format of the distribution            | format                | [dcterms:format](http://purl.org/dc/terms/format)
 Download URL        | Downloadable distribution of a dataset    | download              | [dcat:download](http://www.w3.org/ns/dcat#Download)
-Endpoint            | Endpoint of web service to access dataset | WebService            | [dcat:WebService](http://www.w3.org/ns/dcat#WebService)
+Homepage URL        | For presentation of results in Data.gov only: directs user to a contextual, Agency-hosted "homepage" for the Dataset or API when selecting this resource from the Data.gov user interface	| homepage	| [foaf:homepage](http://xmlns.com/foaf/spec/#term_homepage)
+Endpoint            | Endpoint of web service to access dataset | WebService            | [dcat:webService](http://www.w3.org/ns/dcat#WebService)
 RSS Feed            | Availability of dataset as a feed         | Feed                  | [dcat:feed](http://www.w3.org/ns/dcat#Feed)
 
-(need to add vocab.data.gov terms)
 
 Additional Information
 ----------------------
 
 * [Schema.org](http://schema.org)
 * [DCAT](http://www.w3.org/TR/vocab-dcat/)
+* [vocab.data.gov](http://vocab.data.gov)
 
-Examples
+Examples (coming soon)
 --------
 
 * [JSON](examples/catalog.json)
